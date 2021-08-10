@@ -70,6 +70,8 @@ def projectEval(project_name):
     list_of_transactions.append(transaction_map)
     print(list_of_transactions)
 
+    
+
   
 
 print('''
