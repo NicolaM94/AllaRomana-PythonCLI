@@ -66,10 +66,9 @@ def projectEval(project_name):
   for line in reader:
     for n in range(1,len(header)-1):
       transaction_map["transaction_name"] = line[0]
-      print(re.split("\|",line[n]))
       transaction_map[header[n]] = {"payed":re.split("\|",line[n])[0],"spent":re.split("\|",line[n])[1]}
     list_of_transactions.append(transaction_map)
-    print(transaction_map)
+    print(list_of_transactions)
 
   
 
