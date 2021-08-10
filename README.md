@@ -1,3 +1,3 @@
 # LaRomana
 
-Backbone project in Python for LaRomana App and Desktop Util
+Backbone Python project for LaRomana App and Desktop Util
