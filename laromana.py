@@ -7,14 +7,17 @@ def projectCreator():
     name = input("Come lo chiamiamo questo nuovo progetto?")
     partecipants = input("Inserisci i nomi dei partecipanti, separali con la virgola: ")
     partecipants = re.split(",",partecipants)
+    print(partecipants)
     
     with open(home+"/"+name+".rmn","w") as file:
         file.write("Transazione,")
         for n in partecipants:
-            print(n)
-            stringa = n+","
-            file.write(stringa)
-        file.write("\n")
+            if partecipants.index(n) != len(partecipants):
+              stringa = n+","
+              file.write(stringa)
+            else:
+              strnga = n+"\n"
+              file.write(stringa)
     print("Progetto creato!")
 
 def projectLookup():
@@ -30,6 +33,8 @@ def projectAdder(project_name):
             reader = csv.reader(file,delimiter=",")
             head = next(reader)
             transactions = []
+            trans_name = input("Inserisci descrizione transazione: ")
+            transactions.append(trans_name)
             for name in head[1:]:
                 insertion = input(f"Aggiungi movimento per {name} nella forma <spesa_effettiva;pagamento>")
                 transactions.append(insertion)
