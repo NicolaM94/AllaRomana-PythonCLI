@@ -12,7 +12,7 @@ def projectCreator():
         file.write("Transazione,")
         for n in partecipants:
             if partecipants.index(n) != len(partecipants)+1:
-              stringa = n+","
+              stringa = n+"(Pagato|Speso),"
               file.write(stringa)
             else:
               file.write(stringa)
