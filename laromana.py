@@ -1,8 +1,6 @@
 import csv, re, os
 from pathlib import Path
 
-
-
 def projectCreator():
     home = str(Path.home())
     name = input(">! Come lo chiamiamo questo nuovo progetto?")
@@ -60,6 +58,19 @@ def projectReader(project_name):
 def projectEval(project_name):
   print(f">] Inizio a valutare il progetto '{project_name}'")
   proj_file = open(str(Path.home())+"/"+project_name+".rmn","r")
+  reader = csv.reader(proj_file)
+  header = next(reader)
+
+  list_of_transactions = []
+  transaction_map = {}
+  for line in reader:
+    for n in range(1,len(header)-1):
+      transaction_map["transaction_name"] = line[0]
+      print(re.split("\|",line[n]))
+      transaction_map[header[n]] = {"payed":re.split("\|",line[n])[0],"spent":re.split("\|",line[n])[1]}
+    list_of_transactions.append(transaction_map)
+    print(transaction_map)
+
   
 
 print('''
