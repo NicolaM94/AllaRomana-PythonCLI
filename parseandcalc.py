@@ -6,7 +6,7 @@ from time import sleep
 
 def calculator (project_name):
     
-    print(">]=======================================================[<")
+    print("\n>]=======================================================[<")
     print(f">] Valutiamo il progetto '{project_name}' ...")
     proj_file = open(str(Path.home())+"/"+project_name+".rmn","r")
     reader = csv.reader(proj_file)
@@ -42,6 +42,7 @@ def calculator (project_name):
 
     creditors = {}
     debitors = {}
+    answers = []
 
     for k in partecipants:
       if partecipants[k]["Delta"] > 0:
@@ -51,7 +52,25 @@ def calculator (project_name):
       else:
         continue
     
-    print(creditors)
-    print(debitors)
+    print("\n>] Creditori:", creditors)
+    print(">] Debitori:",debitors)
+
+    
+    for d in debitors:
+      for c in creditors:
+        if debitors[d] > creditors[c]:
+          answers.append(f'{d} deve restituire {debitors[d]} a {c}')
+          debitors[d] = debitors[d] - creditors[c]
+          creditors.pop(c)
+        elif debitors[d] == creditors[c]:
+          answers.append(f'{d} deve restituire {debitors[d]} a {c}')
+          creditors.pop(c)
+          debitors.pop(d)
+
+      
+    
+    print(answers)
+    print("FINEEEEEEEEEEEEEEEEEEEEEEE")
+
 
     print(">]=======================================================[<")
