@@ -54,21 +54,21 @@ def calculator (project_name):
       else:
         continue
     
-    print("\n>] Creditori:", creditors)
-    print(">] Debitori:",debitors)
+    print("\t>] Creditori:", creditors)
+    print("\t>] Debitori:",debitors)
     
     for d in debitors:
       for c in creditors:
         if debitors[d] > creditors[c]:
-          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
           debitors[d] -= creditors[c]
           creditors[c] = 0
         elif debitors[d] == creditors[c]:
-          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
           debitors[d] = 0
           creditors[c] = 0
         elif debitors[d] < creditors[c]:
-          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
           creditors[c] -= debitors[d]
           debitors[d] = 0
 
