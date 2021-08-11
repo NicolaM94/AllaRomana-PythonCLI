@@ -1,4 +1,4 @@
-# >[=-=-=-=-=-=-= LaRomana -=-=-=-=-=-=-]<
+![LaRomanaLogo]()
 
 ### Backbone Python project for LaRomana App and Desktop Util
 
