@@ -44,7 +44,7 @@ def projectAdder(project_name):
             transactions.append(trans_name)
             for name in head[1:-1]:
                 insertion = input(
-                    f">! Aggiungi movimento per {name} nella forma <importo pagato|spesa effettiva>")
+                    f">! Aggiungi movimento per {name} nella forma <importo pagato|spesa effettiva>: ")
                 transactions.append(insertion)
         print(">! Inserisco nel progetto!")
         with open(str(Path.home())+"/"+project_name+".rmn", "a") as file:

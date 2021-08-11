@@ -43,6 +43,8 @@ def calculator (project_name):
 
     creditors = {}
     debitors = {}
+    answers = []
+
 
     for k in partecipants:
       if partecipants[k]["Delta"] > 0:
@@ -54,10 +56,23 @@ def calculator (project_name):
     
     print("\n>] Creditori:", creditors)
     print(">] Debitori:",debitors)
-      
     
-    print(answers)
-    print("FINEEEEEEEEEEEEEEEEEEEEEEE")
+    for d in debitors:
+      for c in creditors:
+        if debitors[d] > creditors[c]:
+          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          debitors[d] -= creditors[c]
+          creditors[c] = 0
+        elif debitors[d] == creditors[c]:
+          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          debitors[d] = 0
+          creditors[c] = 0
+        elif debitors[d] < creditors[c]:
+          answers.append(f"{d} deve restituire {fabs(debitors[d])} a {c}")
+          creditors[c] -= debitors[d]
+          debitors[d] = 0
 
-
-    print(">]=======================================================[<")
+    print("\n>] Ecco i risultati:")
+    for a in answers:
+      print(">!",a)
+    print("\n>]=======================================================[<")
