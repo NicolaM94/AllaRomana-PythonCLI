@@ -1,4 +1,4 @@
-![LaRomanaLogo]()
+![LaRomanaLogo](https://github.com/NicolaM94/LaRomana/blob/master/laromanalogo.png)
 
 ### Backbone Python project for LaRomana App and Desktop Util
 
