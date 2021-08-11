@@ -69,22 +69,31 @@ def projectReader(project_name):
 print('''
 >[ ================================================= ]<
     | Benvenuto in LaRomana. Cosa vuoi fare oggi? |
->[ ================================================= ]<    ''')
-while True:
-    print('''
+>[ ================================================= ]< 
+   
 >] new - Crea nuovo progetto
 >] see - Vedi i progetti attivi
 >] see <name> - Vedi progetto <name>
 >] add <name> - Aggiungi movimenti al progetto <name>
 >] calculate <name> - Restituisce i risultati del progetto <name>
 >] clear - Pulisce lo schermo
->] quit - Chiudi
-''')
+>] quit - Chiudi''')
 
-    ans = input()
+while True:
+    
+    ans = input("\n>] Scrivi 'help' per la lista dei comandi ...")
 
     if ans == "new":
         projectCreator()
+    elif ans == "help":
+      print('''
+>] new - Crea nuovo progetto
+>] see - Vedi i progetti attivi
+>] see <name> - Vedi progetto <name>
+>] add <name> - Aggiungi movimenti al progetto <name>
+>] calculate <name> - Restituisce i risultati del progetto <name>
+>] clear - Pulisce lo schermo
+>] quit - Chiudi''')
     elif ans == "clear":
         os.system('cls' if os.name == 'nt' else 'clear')
     elif ans == "see":
