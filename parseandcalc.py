@@ -1,6 +1,7 @@
 from os import read
 from re import split
 import csv
+from math import fabs
 from pathlib import Path
 from time import sleep
 
@@ -42,7 +43,6 @@ def calculator (project_name):
 
     creditors = {}
     debitors = {}
-    answers = []
 
     for k in partecipants:
       if partecipants[k]["Delta"] > 0:
@@ -54,19 +54,6 @@ def calculator (project_name):
     
     print("\n>] Creditori:", creditors)
     print(">] Debitori:",debitors)
-
-    
-    for d in debitors:
-      for c in creditors:
-        if debitors[d] > creditors[c]:
-          answers.append(f'{d} deve restituire {debitors[d]} a {c}')
-          debitors[d] = debitors[d] - creditors[c]
-          creditors.pop(c)
-        elif debitors[d] == creditors[c]:
-          answers.append(f'{d} deve restituire {debitors[d]} a {c}')
-          creditors.pop(c)
-          debitors.pop(d)
-
       
     
     print(answers)
