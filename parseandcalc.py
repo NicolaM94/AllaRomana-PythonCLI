@@ -1,10 +1,11 @@
 from os import read
 import re, csv
 from pathlib import Path
+from time import sleep
 
 def calculator (project_name):
     
-    print(f">] Inizio a valutare il progetto '{project_name}'")
+    print(f">] Valutiamo il progetto '{project_name}' ...")
     proj_file = open(str(Path.home())+"/"+project_name+".rmn","r")
     reader = csv.reader(proj_file)
     header = next(reader)
@@ -21,5 +22,32 @@ def calculator (project_name):
             partecipants[k]["Payed"] += float(re.split("\|",v)[0])
             partecipants[k]["Spent"] += float(re.split("\|",v)[1])
 
+    print(">] Calcolo dei delta per ciascun partecipante ...")
+    sleep(1)
     for k in partecipants:
-        print(k, partecipants[k])
+        partecipants[k]["Delta"] = partecipants[k]["Payed"] - partecipants[k]["Spent"]
+        print("\t",k, partecipants[k])
+
+    print(">] Verifica anti-cheat ...")
+    sleep(1)
+    if sum([(partecipants[k]["Delta"]) for k in partecipants]) != 0:
+      print("\t>! ... Whoops! Qualcuno ha barato qui!")
+      quit()
+    else:
+      print("\t>! ... a posto!")
+
+    print(">] Inizio a calcolare ...")
+
+    creditors = {}
+    debitors = {}
+
+    for k in partecipants:
+      if partecipants[k]["Delta"] > 0:
+        creditors[k] = partecipants[k]["Delta"]
+      elif partecipants[k]["Delta"] < 0:
+        debitors[k] = partecipants[k]["Delta"]
+      else:
+        continue
+    
+    print(creditors)
+    print(debitors)
