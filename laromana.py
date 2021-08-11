@@ -91,7 +91,7 @@ while True:
 >] see - Vedi i progetti attivi
 >] see <name> - Vedi progetto <name>
 >] add <name> - Aggiungi movimenti al progetto <name>
->] calculate <name> - Restituisce i risultati del progetto <name>
+>] eval <name> - Restituisce i risultati del progetto <name>
 >] clear - Pulisce lo schermo
 >] quit - Chiudi''')
     elif ans == "clear":
@@ -102,8 +102,8 @@ while True:
         projectReader(ans[4:])
     elif "add" in ans:
         projectAdder(ans[4:])
-    elif "calculate" in ans:
-        calculator(ans[10:])
+    elif "eval" in ans:
+        calculator(ans[5:])
     elif ans == "quit":
         print(">! Arrivederci!")
         quit()
