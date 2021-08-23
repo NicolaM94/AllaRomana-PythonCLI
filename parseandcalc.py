@@ -33,7 +33,7 @@ def calculator (project_name):
 
     print("\n>] Verifica anti-cheat ...")
     sleep(1)
-    if sum([(partecipants[k]["Delta"]) for k in partecipants]) != 0:
+    if not -0.1 < sum([(partecipants[k]["Delta"]) for k in partecipants]) < 0.1 :
       print("\t>! ... Whoops! Qualcuno ha barato qui!")
       quit()
     else:
@@ -60,15 +60,15 @@ def calculator (project_name):
     for d in debitors:
       for c in creditors:
         if debitors[d] > creditors[c]:
-          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {round(fabs(debitors[d]),2)} a {c}")
           debitors[d] -= creditors[c]
           creditors[c] = 0
         elif debitors[d] == creditors[c]:
-          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {round(fabs(debitors[d]),2)} a {c}")
           debitors[d] = 0
           creditors[c] = 0
         elif debitors[d] < creditors[c]:
-          answers.append(f"\t{d} deve restituire {fabs(debitors[d])} a {c}")
+          answers.append(f"\t{d} deve restituire {round(fabs(debitors[d]),2)} a {c}")
           creditors[c] -= debitors[d]
           debitors[d] = 0
 
