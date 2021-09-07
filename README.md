@@ -1,5 +1,6 @@
 ![LaRomanaLogo](https://github.com/NicolaM94/LaRomana/blob/master/logo.JPG)
 
+# AllaRomana
 ### Backbone Python project for LaRomana App and Desktop Util
 
 LaRomana is a project that aim to provide a simple and efficient tool for managing costs and payouts between friends. Have you ever been on a holiday with some friends and everyone starts paying for the others to the point that nobody knows what he actually spent and what he owes to the others?
