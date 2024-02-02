@@ -1,5 +1,3 @@
-![LaRomanaLogo](https://github.com/NicolaM94/LaRomana/blob/master/logo.JPG)
-
 # AllaRomana
 ### Backbone Python project for LaRomana App and Desktop Util
 
