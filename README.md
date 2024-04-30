@@ -1,8 +1,2 @@
-# AllaRomana
-### Backbone Python project for LaRomana App and Desktop Util
-
-LaRomana is a project that aim to provide a simple and efficient tool for managing costs and payouts between friends. Have you ever been on a holiday with some friends and everyone starts paying for the others to the point that nobody knows what he actually spent and what he owes to the others?
-
-LaRomana tries to solve that, providing a simple graphic tool to create a project and add the partecipants, add the costs for each partecipant and calculate everyone credit or debt.
-
-**NOTE: THIS IS NOT THE ACTUAL PROJECT, THIS IS A SIMPLE CLI FOR TESTING AND DEBUGGING PURPOSES**
+Semplice script in Python per calcolare come spartire le spese tra un gruppo di persone. Inserendo i dati riguardanti la spesa e l'esborso monetario di ciascuno degli utenti, lo script è in grado di calcolare chi deve restituire a chi e in che misura.
+E' prevista la possibilità di creare e tenere traccia di più progetti contamporaneamente.
